@@ -55,12 +55,13 @@
         return this.altitude
       }
       down(meters) {
-        this.altitude = this.altitude - meters
-        return this.altitude
-        if(this.altitude <= 0 ) {
-          this.altitude = 0 
-          return 'CRASH!'
+        if (this.altitude >= meters) {
+          this.altitude -= meters
+          return this.altitude
         }
+        this.altitude = 0 
+        return 'CRASH!'
+
       }
     }
 
